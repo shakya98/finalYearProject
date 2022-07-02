@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <form method="POST">
+  
+        <label for="swt">Are you sweating?</label><br>
+        <input type="radio" required ngModel name="swt" value="1">
+          <label for="swt">Yes</label><br>
+        <input type="radio" ngModel name="swt" value="0">
+          <label for="swt">No</label><br>
+      
+      
+        <label for="diffBr">Do you have difficulty breathing?</label><br>
+        <input type="radio" required ngModel name="diffBr" value="1">
+          <label for="diffBr">Yes</label><br>
+        <input type="radio" ngModel name="diffBr" value="0">
+          <label for="diffBr">No</label><br>
+      
+        <label for="chestPn">Do you have chest pain?</label><br>
+        <input type="radio" required ngModel name="chestPn" value="1">
+          <label for="chestPn">Yes</label><br>
+        <input type="radio" ngModel name="chestPn" value="0">
+          <label for="chestPn">No</label><br>
+      
+        <label for="abCramp">Do you have an abdominal cramping?</label><br>
+        <input type="radio" required ngModel name="abCramp" value="1">
+          <label for="abCramp">Yes</label><br>
+        <input type="radio" ngModel name="abCramp" value="0">
+          <label for="abCramp">no</label><br>
+      
+        <label for="headache">Do you have a headache?</label><br>
+        <input type="radio" required ngModel name="headache" value="1">
+          <label for="headache">Yes</label><br>
+        <input type="radio" ngModel name="headache" value="0">
+          <label for="headache">No</label><br>
+      
+      
+        <label for="dizz">Do you have dizziness, lightheadedness or faintness?</label><br>
+        <input type="radio" required ngModel name="dizz" value="1">
+          <label for="dizz">Yes</label><br>
+        <input type="radio" ngModel name="dizz" value="0">
+          <label for="dizz">No</label><br>
+      
+        <label for="fear">Do you have a fear of losing control or going crazy or dying?</label><br>
+        <input type="radio" required ngModel name="fear" value="1">
+          <label for="fear">Yes</label><br>
+        <input type="radio" ngModel name="fear" value="0">
+          <label for="fear">No</label><br>
+      
+        <label for="depres">Do you have Depersonalization?</label><br>
+        <input type="radio" required ngModel name="depres" value="1">
+          <label for="depres">Yes</label><br>
+        <input type="radio" ngModel name="depres" value="0">
+          <label for="depres">No</label><br>
+      
+        <label for="flashbk">Are you having flashbacks?</label><br>
+        <input type="radio" required ngModel name="flashbk" value="1">
+          <label for="flashbk">Yes</label><br>
+        <input type="radio" ngModel name="flashbk" value="0">
+          <label for="flashbk">No</label><br>
+      
+        <label for="trem">Do you have a trembling or shaking?</label><br>
+        <input type="radio" required ngModel name="trem" value="1">
+          <label for="trem">Yes</label><br>
+        <input type="radio" ngModel name="trem" value="0">
+          <label for="trem">No</label><br>
+      
+        <label for="bluVi">Do you have a blurred Vision?</label><br>
+        <input type="radio" required ngModel name="bluVi" value="1">
+          <label for="bluVi">Yes</label><br>
+        <input type="radio" ngModel name="bluVi" value="0">
+          <label for="bluVi">No</label><br>
+      
+        <label for="tunVi">Do you have a Tunnel vision?</label><br>
+        <input type="radio" required ngModel name="tunVi" value="1">
+          <label for="tunVi">Yes</label><br>
+        <input type="radio" ngModel name="tunVi" value="0">
+          <label for="tunVi">No</label><br>
+      
+        <label for="senTer">Do you have a sense of terror?</label><br>
+        <input type="radio" required ngModel name="senTer" value="1">
+          <label for="senTer">Yes</label><br>
+        <input type="radio" ngModel name="senTer" value="0">
+          <label for="senTer">No</label><br>
+      
+        <label for="firstYes">Is this the first time?</label><br>
+        <input type="radio" required ngModel name="firstYes" value="1">
+          <label for="firstYes">Yes</label><br>
+        <input type="radio" ngModel name="firstYes" value="0">
+          <label for="firstYes">No</label><br>
+      
+        <label for="lastYes">Does the attack last more than 30 minutes?</label><br>
+        <input type="radio" required ngModel name="lastYes" value="1">
+          <label for="lastYes">Yes</label><br>
+        <input type="radio" ngModel name="lastYes" value="0">
+          <label for="lastYes">No</label><br>
+      
+        <input type="submit" value="submit"/>
+      </form>
+
+      <p> {{ prediction }} </p>
+      <p> {{ steps }} </p>
+</html>
