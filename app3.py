@@ -443,13 +443,10 @@ def index():
 
         df = df[~df.duplicated('value') | (df['value'] == '6')]
 
+        stepsUi = df['steps_lower_str'].head(7).to_json(orient = 'values')
 
-        stepsUi = df['steps_lower_str'].head(7).to_string(index=False)
-
-
-
-        print(data_to_predict)
-    return jsonify(data_to_predict)
+        returnObject = {"prediction":data_to_predict, "stepsUi":stepsUi}
+    return jsonify(returnObject)
 app.run()
 
 if __name__ == "_main_":

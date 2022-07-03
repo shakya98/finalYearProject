@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class PredictionServiceService {
 
   constructor(private http: HttpClient) { }
 
-  PostPredictionForm(formData:FormData){
+  PostPredictionForm(formData:FormData): Observable<any>{
     return this.http.post(this.BASE_URL + 'getFinalPrediction', formData);
   }
 }
