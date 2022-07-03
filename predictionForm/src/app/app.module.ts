@@ -13,6 +13,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatCardModule,
     MatCheckboxModule,
     MatButtonModule,
-    NgbModule
+    FlexLayoutModule,
+    NgbModule,
+    HttpClientModule,
+    NgxSpinnerModule,
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

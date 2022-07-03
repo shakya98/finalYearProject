@@ -3,8 +3,8 @@
   <h1>Title ekak dapan</h1>
 </mat-toolbar>
 <form [formGroup]="predictionForm" (ngSubmit)="onSubmit()" *ngIf="predictionForm">
-  <div class="container">
-    <div fxFlex="40%">
+  <div class="container" fxLayout fxLayoutAlign="center" fxLayoutGap="5px" fxLayoutGap.xs="0">
+    <div fxFlex="50%">
       <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
         [ngClass]="{'dissable': this.predictionForm.get('swt')?.value == false}">
         <mat-card-content>
@@ -140,15 +140,20 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div fxFlex="20%">
+    <div fxFlex="20%" class="middle">
       <div class="button-row">
-        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary">Submit <mat-icon>arrow_forward_ios</mat-icon></button>
       </div>
     </div>
-    <div fxFlex="40%">
-
+    <div fxFlex="40%" class="right">
+      <mat-card [style.backgroundColor]="'SlateGray'">
+        <mat-card-content>
+          <h4> Prediction: {{prediction}}</h4>
+          <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+          <mat-progress-bar mode="indeterminate" *ngIf="!precentage" [color]="'primary'"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{precentage}}"  *ngIf="precentage" [color]="'accent'"></mat-progress-bar>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
-
-
 </form>

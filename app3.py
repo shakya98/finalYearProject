@@ -1,5 +1,5 @@
 from pyexpat import model
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 import pickle
 import model2 as md2
 import requests
@@ -10,8 +10,10 @@ import contractions
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
 @app.route('/getFinalPrediction',methods=['GET', 'POST'])
 def index():
     html_text = requests.get('https://www.healthline.com/health/how-to-stop-a-panic-attack').text
@@ -383,21 +385,21 @@ def index():
         model = pickle.load(open("model.pkl", "rb"))
         print("sdsfcdsf")
 
-        swt = request.form.get('swt')
-        diffBr = request.form.get('diffBr')
-        chestPn = request.form.get('chestPn')
-        abCramp = request.form.get('abCramp')
-        headache = request.form.get('headache')
-        dizz = request.form.get('dizz')
-        fear = request.form.get('fear')
-        depres = request.form.get('depres')
-        flashbk = request.form.get('flashbk')
-        trem = request.form.get('trem')
-        bluVi = request.form.get('bluVi')
-        tunVi = request.form.get('tunVi')
-        senTer = request.form.get('senTer')
-        firstYes = request.form.get('firstYes')
-        lastYes = request.form.get('lastYes')
+        swt = request.json.get('swt')
+        diffBr = request.json.get('diffBr')
+        chestPn = request.json.get('chestPn')
+        abCramp = request.json.get('abCramp')
+        headache = request.json.get('headache')
+        dizz = request.json.get('dizz')
+        fear = request.json.get('fear')
+        depres = request.json.get('depres')
+        flashbk = request.json.get('flashbk')
+        trem = request.json.get('trem')
+        bluVi = request.json.get('bluVi')
+        tunVi = request.json.get('tunVi')
+        senTer = request.json.get('senTer')
+        firstYes = request.json.get('firstYes')
+        lastYes = request.json.get('lastYes')
 
         swt = int(swt)
         diffBr = int(diffBr)
@@ -447,7 +449,7 @@ def index():
 
 
         print(data_to_predict)
-    return data_to_predict
+    return jsonify(data_to_predict)
 app.run()
 
 if __name__ == "_main_":
