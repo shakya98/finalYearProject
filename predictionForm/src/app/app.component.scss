@@ -1,0 +1,33 @@
+mat-placeholder {
+  font-size: larger;
+  padding-right: 10px;
+}
+mat-checkbox {
+  float: right;
+}
+mat-toolbar {
+  color: whitesmoke;
+}
+.questionCard{
+  margin: 5px;
+  color: gainsboro;
+}
+.dissable {
+  filter:grayscale(100%);
+}
+
+.button-row{
+  text-align: center;
+  width: 40%;
+  padding: 10px;
+}
+
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
+
+.container {
+  min-height: 100%;
+  width: 100%;
+}
