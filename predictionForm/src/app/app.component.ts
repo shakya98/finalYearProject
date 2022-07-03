@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
   prediction: any;
   precentage: any;
   color: string | undefined;
+  setpsUi: any;
 
   constructor(private predictionServiceService: PredictionServiceService, private spinner: NgxSpinnerService) { }
 
@@ -61,10 +62,11 @@ export class AppComponent implements OnInit {
 
     this.predictionServiceService.PostPredictionForm(this.formData).subscribe({
       next: (response) => {
-        this.prediction = response;
+        this.prediction = response.prediction;
+        this.setpsUi = JSON.parse(response.stepsUi);
         this.spinner.hide();
         if(response){
-          switch (response) {
+          switch (this.prediction) {
             case "low":
               this.color = "green";
               this.precentage = 30;
