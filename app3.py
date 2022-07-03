@@ -5,13 +5,8 @@ import model2 as md2
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import lxml
 import numpy as np
-import nltk
-import string
-import fasttext
 import contractions
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
@@ -20,17 +15,8 @@ app = Flask(__name__)
 @app.route('/getFinalPrediction',methods=['GET', 'POST'])
 def index():
     html_text = requests.get('https://www.healthline.com/health/how-to-stop-a-panic-attack').text
-
-
-
-
-
     soup = BeautifulSoup(html_text, 'lxml')
     stepsToDo = soup.find_all('h3')
-
-
-
-
     df = pd.DataFrame(columns = 
             ['steps'])
         
@@ -292,14 +278,6 @@ def index():
 
 
     m = df['steps_lower_str']
-    # medicine = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['medications', 'prescribed', 'medicine'])))
-    # breathEx = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['breathing', 'breaths', 'meditate', 'breath', 'meditation'])))
-    # happyPl = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['happy', 'place'])))
-    # fucus = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['focus', 're-focus', 'object', 'objects', 'notice', 'name', 'naming'])))
-    # calm = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['mindfulness', 'relaxation', 'lavender', 'peaceful', 'positive'])))
-    # er = m.apply(lambda x: np.max(np.in1d(np.asarray(x.split()), ['medical', 'consult', 'doctor', 'hospital'])))
-
-
 
     df['med1'] = m.map(lambda x: True if 'medications' in x else False)
     df['med2'] = m.map(lambda x: True if 'prescribed' in x else False)
@@ -401,7 +379,6 @@ def index():
 
 
 
-    print("sdsfcdsf")
     if request.method == 'POST' :
         model = pickle.load(open("model.pkl", "rb"))
         print("sdsfcdsf")

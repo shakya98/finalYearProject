@@ -7,9 +7,12 @@ import numpy as np
 import csv
 import pandas as pd
 import pickle
+import os
 
-dfrm = pd.read_csv(
-    'c:/Users/User/Desktop/burty/Angular/fyp/src/app/datasetPanicAtt.csv')
+script_dir = os.path.dirname(__file__)
+rel_path = "dataset/datasetPanicAtt.csv"
+
+dfrm = pd.read_csv(os.path.join(script_dir, rel_path))
 
 # Create feature and target arrays
 X = dfrm.drop(['level'], axis=1)
