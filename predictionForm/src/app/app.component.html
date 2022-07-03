@@ -1,0 +1,159 @@
+<!-- header -->
+<mat-toolbar>
+  <h1>Title ekak dapan</h1>
+</mat-toolbar>
+<form [formGroup]="predictionForm" (ngSubmit)="onSubmit()" *ngIf="predictionForm">
+  <div class="container" fxLayout fxLayoutAlign="center" fxLayoutGap="5px" fxLayoutGap.xs="0">
+    <div fxFlex="50%">
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('swt')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Are you sweating?</mat-placeholder>
+          <mat-checkbox formControlName="swt">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('diffBr')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have difficulty breathing?</mat-placeholder>
+          <mat-checkbox formControlName="diffBr">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('chestPn')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have difficulty breathing?</mat-placeholder>
+          <mat-checkbox formControlName="chestPn">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('abCramp')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have an abdominal cramping?</mat-placeholder>
+          <mat-checkbox formControlName="abCramp">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('headache')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a headache?</mat-placeholder>
+          <mat-checkbox formControlName="headache">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('dizz')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have dizziness, lightheadedness or faintness?</mat-placeholder>
+          <mat-checkbox formControlName="dizz">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('fear')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a fear of losing control or going crazy or dying?</mat-placeholder>
+          <mat-checkbox formControlName="fear">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('depres')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have Depersonalization?</mat-placeholder>
+          <mat-checkbox formControlName="depres">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('flashbk')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Are you having flashbacks?</mat-placeholder>
+          <mat-checkbox formControlName="flashbk">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('trem')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a trembling or shaking?</mat-placeholder>
+          <mat-checkbox formControlName="trem">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('bluVi')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a blurred Vision?</mat-placeholder>
+          <mat-checkbox formControlName="bluVi">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('tunVi')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a Tunnel vision?</mat-placeholder>
+          <mat-checkbox formControlName="tunVi">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('senTer')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Do you have a sense of terror?</mat-placeholder>
+          <mat-checkbox formControlName="senTer">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('firstYes')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Is this the first time?</mat-placeholder>
+          <mat-checkbox formControlName="firstYes">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="questionCard" [style.backgroundColor]="'SlateGray'"
+        [ngClass]="{'dissable': this.predictionForm.get('lastYes')?.value == false}">
+        <mat-card-content>
+          <mat-placeholder>Does the attack last more than 30 minutes?</mat-placeholder>
+          <mat-checkbox formControlName="lastYes">
+          </mat-checkbox>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxFlex="20%" class="middle">
+      <div class="button-row">
+        <button mat-raised-button color="primary">Submit <mat-icon>arrow_forward_ios</mat-icon></button>
+      </div>
+    </div>
+    <div fxFlex="40%" class="right">
+      <mat-card [style.backgroundColor]="'SlateGray'">
+        <mat-card-content>
+          <h4> Prediction: {{prediction}}</h4>
+          <ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+          <mat-progress-bar mode="indeterminate" *ngIf="!precentage" [color]="'primary'"></mat-progress-bar>
+          <mat-progress-bar mode="determinate" value="{{precentage}}"  *ngIf="precentage" [color]="'accent'"></mat-progress-bar>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</form>
